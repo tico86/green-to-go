@@ -7,6 +7,7 @@ import {
     QueryClientProvider,
 } from '@tanstack/react-query'
 import Header from './components/Header/Header';
+//@ts-ignore
 import ChatBot from 'react-simple-chatbot';
 import {useState} from "react";
 
