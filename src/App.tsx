@@ -7,6 +7,9 @@ import {
     QueryClientProvider,
 } from '@tanstack/react-query'
 import Header from './components/Header/Header';
+import ChatBot from 'react-simple-chatbot';
+import {useState} from "react";
+
 
 function App() {
     const queryClient = new QueryClient()
@@ -23,18 +26,37 @@ function App() {
 
 export default App
 const Test = () => {
+    const [showChat, setShowChat] = useState(false)
     const {data, isLoading, isError} = useQuery(['test'], () => {
         return fetch(
             'https://http-nodejs-production-0920.up.railway.app').then((res) =>
             res.json()
         )
     })
-    console.log(data)
+
+    const steps = [
+        {
+            id: '1',
+            message: `Grams? ${data?.grams}`,
+            trigger: '2',
+        },
+     /*   {
+            id: '2',
+            user: true,
+            trigger: '3',
+        },*/
+        {
+            id: '2',
+            message: `Litres? ${data?.grams}`,
+            end: true,
+        },
+    ]
+
     if (isLoading) return <div>Loading...</div>
     if (isError) return <div>Error</div>
     return (
         <div>
-            <p>Grams: {data.grams}</p>
-            <p>Litres: {data.litres}</p>
+            <button onClick={() => setShowChat(true)}>Show bot</button>
+            {showChat && (<ChatBot steps={steps}/>)}
         </div>)
 }
