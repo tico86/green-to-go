@@ -24,16 +24,17 @@ function App() {
 export default App
 const Test = () => {
     const {data, isLoading, isError} = useQuery(['test'], () => {
-        return fetch('https://jsonplaceholder.typicode.com/todos/').then((res) =>
+        return fetch(
+            'https://http-nodejs-production-0920.up.railway.app').then((res) =>
             res.json()
         )
     })
+    console.log(data)
     if (isLoading) return <div>Loading...</div>
     if (isError) return <div>Error</div>
     return (
         <div>
-            <ul>
-                {data.map((item) => (<li>{item.title}</li>))}
-            </ul>
+            <p>Grams: {data.grams}</p>
+            <p>Litres: {data.litres}</p>
         </div>)
 }
