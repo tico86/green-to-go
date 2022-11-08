@@ -69,7 +69,7 @@ const Test = () => {
     return (
         <div className='fab-container'>
 
-            {showChat && (<ThemeProvider theme={theme}><ChatBot theme={theme} steps={steps}
+            {showChat && (<ThemeProvider theme={theme}><ChatBot theme={theme} steps={steps} botAvatar={bot}
                                                                 headerTitle={'BlaBla'}/></ThemeProvider>)}
             <img
                 src={bot}
