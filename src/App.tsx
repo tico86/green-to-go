@@ -1,8 +1,6 @@
 import './App.css'
 import {
     useQuery,
-    useMutation,
-    useQueryClient,
     QueryClient,
     QueryClientProvider,
 } from '@tanstack/react-query'
@@ -10,7 +8,20 @@ import Header from './components/Header/Header';
 //@ts-ignore
 import ChatBot from 'react-simple-chatbot';
 import {useState} from "react";
+import bot from "./assets/bot.svg";
+// @ts-ignore
+import {ThemeProvider} from 'styled-components';
 
+const theme = {
+    fontFamily: 'Helvetica Neue',
+    headerBgColor: 'rgb(73, 118, 186)',
+    headerFontColor: '#fff',
+    headerFontSize: '15px',
+    botBubbleColor: 'rgb(73, 118, 186)',
+    botFontColor: '#fff',
+    userBubbleColor: '#fff',
+    userFontColor: '#4a4a4a',
+};
 
 function App() {
     const queryClient = new QueryClient()
@@ -41,11 +52,6 @@ const Test = () => {
             message: `Grams? ${data?.websiteCarbon?.grams}`,
             trigger: '2',
         },
-        /*   {
-               id: '2',
-               user: true,
-               trigger: '3',
-           },*/
         {
             id: '2',
             message: `Litres? ${data?.websiteCarbon?.litres}`,
@@ -64,8 +70,14 @@ const Test = () => {
         return (
             <div className='fab-container'>
 
-                {showChat && (<ChatBot steps={steps}/>)}
-                <button onClick={() => setShowChat(true)}>Show bot</button>
+                {showChat && (<ThemeProvider theme={theme}><ChatBot theme={theme} steps={steps}/></ThemeProvider>)}
+                <img
+                    src={bot}
+                    height={'70px'}
+                    alt="AXA Bot"
+                    onClick={() => setShowChat(!showChat)}
+                />
+
             </div>)
     }
 }
