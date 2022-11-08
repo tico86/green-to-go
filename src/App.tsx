@@ -70,7 +70,7 @@ const Test = () => {
         return (
             <div className='fab-container'>
 
-                {showChat && (<ThemeProvider theme={theme}><ChatBot theme={theme} steps={steps}/></ThemeProvider>)}
+                {showChat && (<ThemeProvider theme={theme}><ChatBot theme={theme} steps={steps} headerTitle={'BlaBla'}/></ThemeProvider>)}
                 <img
                     src={bot}
                     height={'70px'}
