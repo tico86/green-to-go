@@ -62,9 +62,10 @@ const Test = () => {
     if (isError) return <div>Error</div>
     if (data) {
         return (
-            <div>
-                <button onClick={() => setShowChat(true)}>Show bot</button>
+            <div className='fab-container'>
+
                 {showChat && (<ChatBot steps={steps}/>)}
+                <button onClick={() => setShowChat(true)}>Show bot</button>
             </div>)
     }
 }
