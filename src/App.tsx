@@ -38,26 +38,33 @@ const Test = () => {
     const steps = [
         {
             id: '1',
-            message: `Grams? ${data?.grams}`,
+            message: `Grams? ${data?.websiteCarbon?.grams}`,
             trigger: '2',
         },
-     /*   {
-            id: '2',
-            user: true,
-            trigger: '3',
-        },*/
+        /*   {
+               id: '2',
+               user: true,
+               trigger: '3',
+           },*/
         {
             id: '2',
-            message: `Litres? ${data?.grams}`,
+            message: `Litres? ${data?.websiteCarbon?.litres}`,
+            trigger: '3'
+        },
+        {
+            id: '3',
+            message: `Carbon Intensity? ${data?.carbonIntensity?.carbonIntensity}`,
             end: true,
         },
     ]
 
     if (isLoading) return <div>Loading...</div>
     if (isError) return <div>Error</div>
-    return (
-        <div>
-            <button onClick={() => setShowChat(true)}>Show bot</button>
-            {showChat && (<ChatBot steps={steps}/>)}
-        </div>)
+    if (data) {
+        return (
+            <div>
+                <button onClick={() => setShowChat(true)}>Show bot</button>
+                {showChat && (<ChatBot steps={steps}/>)}
+            </div>)
+    }
 }
