@@ -1,0 +1,120 @@
+header {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  font-family: 'Source Sans Pro', Arial, sans-serif;
+  width: 100%;
+  height: 70px;
+}
+
+.header-main {
+  font-size: 16px;
+  font-weight: normal;
+  line-height: 1.5;
+  color: #333;
+  text-align: left;
+  box-sizing: border-box;
+  position: relative;
+  display: block;
+  height: 75px;
+  border-bottom: 2px solid #e5e5e5;
+  background: #fff;
+}
+
+.header-logo {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.header-logo_image {
+  color: #103184;
+  box-sizing: border-box;
+  vertical-align: middle;
+  border-style: none;
+  margin-top: 0;
+  display: block;
+  height: 43px;
+}
+
+.header-main_box {
+  font-size: 16px;
+  font-weight: normal;
+  line-height: 1.5;
+  color: #333;
+  text-align: left;
+  box-sizing: border-box;
+  margin-top: 0;
+  justify-content: space-between;
+  padding-right: 15px;
+  padding-left: 15px;
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  display: flex;
+  height: 100%;
+  flex-wrap: nowrap;
+  align-items: center;
+  max-width: 960px;
+}
+
+nav {
+  font-size: 16px;
+  font-weight: normal;
+  line-height: 1.5;
+  color: #333;
+  text-align: left;
+  box-sizing: border-box;
+  display: block;
+  margin-left: auto;
+}
+
+header ul {
+  font-size: 16px;
+  font-weight: normal;
+  line-height: 1.5;
+  color: #333;
+  text-align: left;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+  display: flex;
+}
+
+header li {
+  font-size: 16px;
+  font-weight: normal;
+  line-height: 1.5;
+  color: #333;
+  list-style-type: none;
+  box-sizing: border-box;
+  display: block;
+  float: left;
+  margin: 0 8px;
+}
+
+nav a {
+  list-style-type: none;
+  box-sizing: border-box;
+  text-decoration: none;
+  background-color: transparent;
+  touch-action: manipulation;
+  cursor: pointer;
+  margin-top: 0;
+  color: #00008f;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  position: relative;
+  display: flex;
+  height: 75px;
+  padding: 0 10px;
+  align-items: center;
+  text-align: center;
+  text-transform: uppercase;
+  vertical-align: middle;
+  font-size: 13px;
+  line-height: 1.38;
+}
+
+nav a:hover {
+  border-bottom: 4px solid #f07662;
+}
