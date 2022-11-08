@@ -66,18 +66,19 @@ const Test = () => {
 
     if (isLoading) return <div>Loading...</div>
     if (isError) return <div>Error</div>
-    if (data) {
-        return (
-            <div className='fab-container'>
+    return (
+        <div className='fab-container'>
 
-                {showChat && (<ThemeProvider theme={theme}><ChatBot theme={theme} steps={steps} headerTitle={'BlaBla'}/></ThemeProvider>)}
-                <img
-                    src={bot}
-                    height={'70px'}
-                    alt="AXA Bot"
-                    onClick={() => setShowChat(!showChat)}
-                />
+            {showChat && (<ThemeProvider theme={theme}><ChatBot theme={theme} steps={steps}
+                                                                headerTitle={'BlaBla'}/></ThemeProvider>)}
+            <img
+                src={bot}
+                height={'70px'}
+                alt="AXA Bot"
+                onClick={() => setShowChat(!showChat)}
+            />
 
-            </div>)
-    }
+        </div>)
+
+}
 }
