@@ -54,7 +54,7 @@ const Test = () => {
         });
     }
     useEffect(() => {
-        if (!isEcoMode && img === '') {
+        if (!isEcoMode && !isEcoInUrl && img === '') {
             loadImage()
         }
     }, [isEcoMode])
