@@ -18,7 +18,7 @@ const Header = ({isEcoMode}) => {
 
                         </a>
                     </div>
-                    {isEcoMode && (<p>🌱</p>)}
+                    {isEcoMode && (<p style={{fontSize: '2.5rem'}}>🌱</p>)}
                     <nav>
                         <ul>
                             <li>
