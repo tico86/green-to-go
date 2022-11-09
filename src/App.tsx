@@ -15,6 +15,8 @@ import Hero from './components/Hero/Hero';
 import Footer from './components/Footer/Footer';
 import Content from './components/Content/Content';
 
+import ecoImage from './assets/car_banner_sw-low.jpg';
+
 const theme = {
     fontFamily: 'Helvetica Neue',
     headerBgColor: 'rgb(73, 118, 186)',
@@ -35,7 +37,7 @@ function App() {
             <div className="App">
                 <Header/>
                 <Test/>
-                <Content/>
+                <Content />
                 <Footer/>
             </div>
         </QueryClientProvider>
@@ -95,6 +97,8 @@ const Test = () => {
         <>
 
             {!isEcoMode && img && <Hero imageSrc={img}/>}
+            {isEcoMode && <Hero imageSrc={ecoImage}/>}
+
 
             <div className='fab-container'>
 
