@@ -62,7 +62,7 @@ const Test = () => {
             loadImage()
         }
     }, [isEcoMode])
-
+    const effFactor = data?.websiteCarbonEcoImprovementFactor && Number(data?.websiteCarbonEcoImprovementFactor).toFixed(1);
     const steps = [
         {
             id: '1',
@@ -77,7 +77,7 @@ const Test = () => {
                     console.log(isEcoMode)
                     setIsEcoMode(!isEcoMode);
                     localStorage.setItem('ecoMode', (!isEcoMode).toString())
-                }}>Darf ich Ihnen die energieeffiziente Webseite zeigen?</button>
+                }}>{`Darf ich Ihnen die energieeffiziente Webseite zeigen? (${effFactor} mal effizienter)`}</button>
             ),
             end: true,
         },
