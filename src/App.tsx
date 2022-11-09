@@ -42,7 +42,7 @@ function App() {
 export default App
 const Test = () => {
     const [showChat, setShowChat] = useState(false);
-    const [isEcoMode, setIsEcoMode] = useState(localStorage.getItem('ecoMode') === 'true' || false);
+    const [isEcoMode, setIsEcoMode] = useState(localStorage.getItem('ecoMode') === 'true');
     const [img, setImg] = useState('');
     const {data, isLoading, isError} = useQuery(['test'], () => {
         return fetch(
@@ -50,14 +50,14 @@ const Test = () => {
             res.json()
         )
     })
-
+    const isEcoInUrl = window.location.href.includes('eco');
     const loadImage = () => {
         import('./assets/car_banner.jpg').then(image => {
             setImg(image.default)
         });
     }
     useEffect(() => {
-        if (!isEcoMode && img === '') {
+        if (!isEcoMode && !isEcoInUrl && img === '') {
             loadImage()
         }
     }, [isEcoMode])
@@ -96,6 +96,7 @@ const Test = () => {
     if (isError) return <div>Error</div>
     return (
         <>
+
             {!isEcoMode && img && <Hero imageSrc={img} />}
 
             <div className='fab-container'>
