@@ -33,8 +33,8 @@ function App() {
         <QueryClientProvider client={queryClient}>
             <div className="App">
                 <Header/>
-                <Test />
-                <Footer />
+                <Test/>
+                <Footer/>
             </div>
         </QueryClientProvider>
     )
@@ -66,28 +66,18 @@ const Test = () => {
     const steps = [
         {
             id: '1',
-            message: `Grams? ${data?.websiteCarbon?.grams}`,
-            trigger: '2',
+            message: `Momentan ist die Carbonintensität ${data?.carbonIntensity?.carbonIntensity > 100 ? 'hoch' : 'niedrig'}.`,
+            trigger: '2'
         },
         {
             id: '2',
-            message: `Litres? ${data?.websiteCarbon?.litres}`,
-            trigger: '3'
-        },
-        {
-            id: '3',
-            message: `Carbon Intensity? ${data?.carbonIntensity?.carbonIntensity}`,
-            trigger: '4'
-        },
-        {
-            id: '4',
             component: (
                 <button onClick={() => {
                     // @ts-ignore
                     console.log(isEcoMode)
                     setIsEcoMode(!isEcoMode);
                     localStorage.setItem('ecoMode', (!isEcoMode).toString())
-                }}> Eco Mode aktivieren/deaktivieren</button>
+                }}>Darf ich Ihnen die energieeffiziente Webseite zeigen?</button>
             ),
             end: true,
         },
@@ -98,7 +88,7 @@ const Test = () => {
     return (
         <>
 
-            {!isEcoMode && img && <Hero imageSrc={img} />}
+            {!isEcoMode && img && <Hero imageSrc={img}/>}
 
             <div className='fab-container'>
 
