@@ -15,8 +15,6 @@ import Hero from './components/Hero/Hero';
 import Footer from './components/Footer/Footer';
 import Content from './components/Content/Content';
 
-import ecoImage from './assets/car_banner_sw-low.jpg';
-
 const theme = {
     fontFamily: 'Helvetica Neue',
     headerBgColor: 'rgb(73, 118, 186)',
@@ -37,7 +35,7 @@ function App() {
             <div className="App">
                 <Header/>
                 <Test/>
-                <Content />
+                <Content/>
                 <Footer/>
             </div>
         </QueryClientProvider>
@@ -56,16 +54,22 @@ const Test = () => {
         )
     })
     const isEcoInUrl = window.location.href.includes('eco');
-    const loadImage = () => {
-        import('./assets/car_banner.jpg').then(image => {
-            setImg(image.default)
-        });
+    const loadImage = (ecoMode: boolean, isEcoInUrl: boolean) => {
+        if (ecoMode || isEcoInUrl) {
+            import('./assets/car_banner_sw-low.jpg').then(image => {
+                setImg(image.default)
+            });
+        } else {
+            import('./assets/car_banner.jpg').then(image => {
+                setImg(image.default)
+            });
+        }
     }
     useEffect(() => {
-        if (!isEcoMode && !isEcoInUrl && img === '') {
-            loadImage()
-        }
-    }, [isEcoMode])
+            loadImage(isEcoMode, isEcoInUrl)
+
+        }, [isEcoMode, isEcoInUrl]
+    )
     const effFactor = data?.websiteCarbonEcoImprovementFactor && Number(data?.websiteCarbonEcoImprovementFactor).toFixed(1);
     const steps = [
         {
@@ -96,8 +100,8 @@ const Test = () => {
     return (
         <>
 
-            {!isEcoMode && img && <Hero imageSrc={img}/>}
-            {isEcoMode && <Hero imageSrc={ecoImage}/>}
+
+            {img && <Hero imageSrc={img}/>}
 
 
             <div className='fab-container'>
