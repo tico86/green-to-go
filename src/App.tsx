@@ -135,9 +135,13 @@ const Test = () => {
 
             <div className='fab-container'>
 
-                {showChat && (<ThemeProvider theme={theme}><ChatBot theme={theme} steps={steps}
+                {showChat && isEcoMode && (<ThemeProvider theme={theme}><ChatBot theme={theme} steps={steps}
                                                                     botAvatar={isEcoMode ? bot_eco : bot}
                                                                     headerTitle={'BlaBla'}/></ThemeProvider>)}
+
+                {showChat && !isEcoMode && (<ThemeProvider theme={theme}><ChatBot theme={theme} steps={steps}
+                                                                                 botAvatar={isEcoMode ? bot_eco : bot}
+                                                                                 headerTitle={'BlaBla'}/></ThemeProvider>)}
                 {!isEcoMode && (<img
                     src={bot}
                     height={'70px'}
