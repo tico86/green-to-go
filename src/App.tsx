@@ -9,13 +9,15 @@ import Header from './components/Header/Header';
 import ChatBot from 'react-simple-chatbot';
 import {useEffect, useState} from "react";
 import bot from "./assets/bot.svg";
+import bot_eco from "./assets/bot_eco.svg";
+
 // @ts-ignore
 import {ThemeProvider} from 'styled-components';
 import Hero from './components/Hero/Hero';
 import Footer from './components/Footer/Footer';
 import Content from './components/Content/Content';
 
-const theme = {
+let theme = {
     fontFamily: 'Helvetica Neue',
     headerBgColor: 'rgb(73, 118, 186)',
     headerFontColor: '#fff',
@@ -66,7 +68,12 @@ const Test = () => {
     }
     useEffect(() => {
             loadImage(isEcoMode, isEcoInUrl)
-
+            theme = {
+                ...theme, ...(isEcoMode ? {
+                    headerBgColor: '#5e8039',
+                    botBubbleColor: '#5e8039'
+                } : {headerBgColor: 'rgb(73, 118, 186)', botBubbleColor: 'rgb(73, 118, 186)',})
+            }
         }, [isEcoMode, isEcoInUrl]
     )
     // @ts-ignore
@@ -128,14 +135,22 @@ const Test = () => {
 
             <div className='fab-container'>
 
-                {showChat && (<ThemeProvider theme={theme}><ChatBot theme={theme} steps={steps} botAvatar={bot}
+                {showChat && (<ThemeProvider theme={theme}><ChatBot theme={theme} steps={steps}
+                                                                    botAvatar={isEcoMode ? bot_eco : bot}
                                                                     headerTitle={'BlaBla'}/></ThemeProvider>)}
-                <img
+                {!isEcoMode && (<img
                     src={bot}
                     height={'70px'}
                     alt="AXA Bot"
                     onClick={() => setShowChat(!showChat)}
-                />
+                />)}
+
+                {isEcoMode && (<img
+                    src={bot_eco}
+                    height={'70px'}
+                    alt="AXA Bot"
+                    onClick={() => setShowChat(!showChat)}
+                />)}
 
             </div>
             <Content/>
