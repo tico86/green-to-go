@@ -79,17 +79,36 @@ const Test = () => {
         },
         {
             id: '2',
+            message: `Darf ich Ihnen die energieeffiziente Webseite zeigen? (${effFactor?.toFixed(2)}% effizienter)`,
+            trigger: '3'
+        },
+        {
+            id: '3',
             component: (
-                <button onClick={() => {
-                    // @ts-ignore
+                <div>
+                    <button className='button' onClick={() => {
+                        // @ts-ignore
 
-                    setIsEcoMode(isEcoMode => {
-                        localStorage.setItem('ecoMode', (!isEcoMode).toString());
-                        return !isEcoMode
-                    });
+                        setIsEcoMode(() => {
+                            localStorage.setItem('ecoMode', (true).toString());
+                            return true
+                        });
 
 
-                }}>{`Darf ich Ihnen die energieeffiziente Webseite zeigen? (${effFactor?.toFixed(2)}% effizienter)`}</button>
+                    }}>Ja
+                    </button>
+                    <button onClick={() => {
+                        // @ts-ignore
+
+                        setIsEcoMode(() => {
+                            localStorage.setItem('ecoMode', (false).toString());
+                            return false
+                        });
+
+
+                    }}>Nein
+                    </button>
+                </div>
             ),
             end: true,
         },
