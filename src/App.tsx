@@ -141,7 +141,7 @@ const Test = () => {
 
                 {showChat && !isEcoMode && (<ThemeProvider theme={theme}><ChatBot theme={theme} steps={steps}
                                                                                  botAvatar={isEcoMode ? bot_eco : bot}
-                                                                                 headerTitle={'BlaBla'}/></ThemeProvider>)}
+                                                                                 headerTitle={'Ada'}/></ThemeProvider>)}
                 {!isEcoMode && (<img
                     src={bot}
                     height={'70px'}
