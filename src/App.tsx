@@ -70,7 +70,8 @@ const Test = () => {
 
         }, [isEcoMode, isEcoInUrl]
     )
-    const effFactor = data?.websiteCarbonEcoImprovementFactor && Number(data?.websiteCarbonEcoImprovementFactor).toFixed(1);
+    // @ts-ignore
+    const effFactor = data?.websiteCarbonEcoImprovementFactor && ((Number(data?.websiteCarbonEcoImprovementFactor).toFixed(1) - 1) * 100);
     const steps = [
         {
             id: '1',
@@ -89,7 +90,7 @@ const Test = () => {
                     });
 
 
-                }}>{`Darf ich Ihnen die energieeffiziente Webseite zeigen? (${effFactor} mal effizienter)`}</button>
+                }}>{`Darf ich Ihnen die energieeffiziente Webseite zeigen? (${effFactor?.toFixed(2)}% effizienter)`}</button>
             ),
             end: true,
         },
