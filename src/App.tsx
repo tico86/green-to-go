@@ -95,8 +95,12 @@ const Test = () => {
                         });
 
 
-                    }}>Ja
+                    }}>Ja, zeige sie mir
                     </button>
+                    <div>
+                        <button className='button' onClick={() => {
+                        }}>Ich möchte mehr dazu erfahren
+                        </button>
                     <button onClick={() => {
                         // @ts-ignore
 
@@ -106,7 +110,7 @@ const Test = () => {
                         });
 
 
-                    }}>Nein
+                    }}>Vielleicht später
                     </button>
                 </div>
             ),
