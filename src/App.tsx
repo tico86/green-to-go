@@ -137,7 +137,7 @@ const Test = () => {
 
                 {showChat && isEcoMode && (<ThemeProvider theme={theme}><ChatBot theme={theme} steps={steps}
                                                                     botAvatar={isEcoMode ? bot_eco : bot}
-                                                                    headerTitle={'BlaBla'}/></ThemeProvider>)}
+                                                                    headerTitle={'Ada'}/></ThemeProvider>)}
 
                 {showChat && !isEcoMode && (<ThemeProvider theme={theme}><ChatBot theme={theme} steps={steps}
                                                                                  botAvatar={isEcoMode ? bot_eco : bot}
