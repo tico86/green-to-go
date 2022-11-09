@@ -13,6 +13,7 @@ import bot from "./assets/bot.svg";
 import {ThemeProvider} from 'styled-components';
 import Hero from './components/Hero/Hero';
 import Footer from './components/Footer/Footer';
+import Content from './components/Content/Content';
 
 const theme = {
     fontFamily: 'Helvetica Neue',
@@ -34,6 +35,7 @@ function App() {
             <div className="App">
                 <Header/>
                 <Test/>
+                <Content />
                 <Footer/>
             </div>
         </QueryClientProvider>
