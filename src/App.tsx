@@ -11,6 +11,8 @@ import {useEffect, useState} from "react";
 import bot from "./assets/bot.svg";
 // @ts-ignore
 import {ThemeProvider} from 'styled-components';
+import Hero from './components/Hero/Hero';
+import Footer from './components/Footer/Footer';
 
 const theme = {
     fontFamily: 'Helvetica Neue',
@@ -30,7 +32,8 @@ function App() {
         <QueryClientProvider client={queryClient}>
             <div className="App">
                 <Header/>
-                <Test/>
+                <Test />
+                <Footer />
             </div>
         </QueryClientProvider>
     )
@@ -49,7 +52,7 @@ const Test = () => {
     })
 
     const loadImage = () => {
-        import(`./assets/dog.jpg`).then(image => {
+        import('./assets/car_banner.jpg').then(image => {
             setImg(image.default)
         });
     }
@@ -93,7 +96,7 @@ const Test = () => {
     if (isError) return <div>Error</div>
     return (
         <>
-            {!isEcoMode && img && <img src={img} alt=""/>}
+            {!isEcoMode && img && <Hero imageSrc={img} />}
 
             <div className='fab-container'>
 

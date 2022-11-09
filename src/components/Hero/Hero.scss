@@ -1,0 +1,54 @@
+.hero-container {
+  position: relative;
+}
+
+.hero-container_content {
+  position: relative;
+  height: 400px;
+}
+
+.hero-container_image {
+  display: block;
+  position: absolute;
+  width: 100%;
+  object-fit: cover;
+  overflow: hidden;
+  min-height: 420px;
+}
+
+.hero-container_content h2 {
+  position: relative;
+  text-align: center;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  box-sizing: border-box;
+  hyphens: auto;
+  word-wrap: break-word;
+  font-weight: 700;
+  letter-spacing: .015em;
+  font-family: "Publico Headline",Georgia,serif;
+  max-width: 100%;
+  color: #fff;
+  text-shadow: 1px 1px 1px rgba(0,0,0,0.75);
+  line-height: 1.16;
+  font-size: 24px;
+  padding-top: 120px;
+  margin: 0;
+}
+
+.hero-container_content p {
+  position: relative;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  box-sizing: border-box;
+  hyphens: auto;
+  word-wrap: break-word;
+  font-weight: 700;
+  letter-spacing: .015em;
+  font-family: "Publico Headline",Georgia,serif;
+  max-width: 100%;
+  text-align: center;
+  color: #fff;
+  text-shadow: 1px 1px 1px rgba(0,0,0,0.75);
+  line-height: 1.16;
+  font-size: 62px;
+  margin: 0;
+}
