@@ -39,7 +39,7 @@ function App() {
 export default App
 const Test = () => {
     const [showChat, setShowChat] = useState(false);
-    const [isEcoMode, setIsEcoMode] = useState((localStorage.getItem('ecoMode') === 'true') || false);
+    const [isEcoMode, setIsEcoMode] = useState(localStorage.getItem('ecoMode') === 'true' || false);
     const [img, setImg] = useState('');
     const {data, isLoading, isError} = useQuery(['test'], () => {
         return fetch(
@@ -82,6 +82,7 @@ const Test = () => {
                     // @ts-ignore
                     console.log(isEcoMode)
                     setIsEcoMode(!isEcoMode);
+                    localStorage.setItem('ecoMode', (!isEcoMode).toString())
                 }}> Eco Mode aktivieren/deaktivieren</button>
             ),
             end: true,
