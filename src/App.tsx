@@ -74,7 +74,7 @@ const Test = () => {
     const steps = [
         {
             id: '1',
-            message: `Momentan ist die Carbonintensität des Schweizer Stromnetzes ${data?.carbonIntensity?.carbonIntensity > 100 ? 'hoch' : 'niedrig'}.`,
+            message: `Momentan ist die Carbonintensität des Schweizer Strom-Mix ${data?.carbonIntensity?.carbonIntensity > 100 ? 'hoch' : 'niedrig'}.`,
             trigger: '2'
         },
         {
