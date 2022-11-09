@@ -23,6 +23,7 @@ const theme = {
     botFontColor: '#fff',
     userBubbleColor: '#fff',
     userFontColor: '#4a4a4a',
+    background: '#f5f8fb',
 };
 
 function App() {
