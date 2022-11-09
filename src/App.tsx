@@ -97,10 +97,9 @@ const Test = () => {
 
                     }}>Ja, zeige sie mir
                     </button>
-                    <div>
-                        <button className='button' onClick={() => {
-                        }}>Ich möchte mehr dazu erfahren
-                        </button>
+                    <button className='button' onClick={() => {
+                    }}>Ich möchte mehr dazu erfahren
+                    </button>
                     <button onClick={() => {
                         // @ts-ignore
 
