@@ -1,6 +1,6 @@
 header {
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-  font-family: 'Source Sans Pro', Arial, sans-serif;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  font-family: "Source Sans Pro",Arial,sans-serif;
   width: 100%;
   height: 70px;
 }
@@ -14,9 +14,10 @@ header {
   box-sizing: border-box;
   position: relative;
   display: block;
-  height: 75px;
   border-bottom: 2px solid #e5e5e5;
   background: #fff;
+  height: 75px;
+  z-index: 1;
 }
 
 .header-logo {
@@ -56,7 +57,7 @@ header {
   max-width: 960px;
 }
 
-nav {
+.header-main nav {
   font-size: 16px;
   font-weight: normal;
   line-height: 1.5;
@@ -67,7 +68,7 @@ nav {
   margin-left: auto;
 }
 
-header ul {
+.header-main ul {
   font-size: 16px;
   font-weight: normal;
   line-height: 1.5;
@@ -80,7 +81,7 @@ header ul {
   display: flex;
 }
 
-header li {
+.header-main li {
   font-size: 16px;
   font-weight: normal;
   line-height: 1.5;
@@ -92,7 +93,7 @@ header li {
   margin: 0 8px;
 }
 
-nav a {
+.header-main nav a {
   list-style-type: none;
   box-sizing: border-box;
   text-decoration: none;
@@ -102,7 +103,7 @@ nav a {
   margin-top: 0;
   color: #00008f;
   font-weight: 600;
-  letter-spacing: 0.02em;
+  letter-spacing: .02em;
   position: relative;
   display: flex;
   height: 75px;
@@ -115,6 +116,6 @@ nav a {
   line-height: 1.38;
 }
 
-nav a:hover {
+.header-main nav a:hover {
   border-bottom: 4px solid #f07662;
 }
