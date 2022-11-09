@@ -1,7 +1,8 @@
 import logo from '../../assets/logo.svg'
 import './Header.scss';
 
-const Header = () => {
+// @ts-ignore
+const Header = ({isEcoMode}) => {
     return (
         <header>
             <div className={'header-main'}>
@@ -14,8 +15,10 @@ const Header = () => {
                                 height={'43px'}
                                 alt="AXA Logo"
                             />
+
                         </a>
                     </div>
+                    {isEcoMode && (<p>🌱</p>)}
                     <nav>
                         <ul>
                             <li>

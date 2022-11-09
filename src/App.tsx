@@ -33,10 +33,9 @@ function App() {
     return (
         <QueryClientProvider client={queryClient}>
             <div className="App">
-                <Header/>
+
                 <Test/>
-                <Content/>
-                <Footer/>
+
             </div>
         </QueryClientProvider>
     )
@@ -99,9 +98,9 @@ const Test = () => {
     if (isLoading) return <div>Loading...</div>
     if (isError) return <div>Error</div>
     return (
-        <>
+        <div>
 
-
+            <Header isEcoMode={isEcoMode || isEcoInUrl}/>
             {img && <Hero imageSrc={img}/>}
 
 
@@ -117,6 +116,8 @@ const Test = () => {
                 />
 
             </div>
-        </>)
+            <Content/>
+            <Footer/>
+        </div>)
 
 }
