@@ -15,6 +15,8 @@ import Hero from './components/Hero/Hero';
 import Footer from './components/Footer/Footer';
 import Content from './components/Content/Content';
 
+import ecoImage from './assets/car_banner_sw-low.jpg';
+
 const theme = {
     fontFamily: 'Helvetica Neue',
     headerBgColor: 'rgb(73, 118, 186)',
@@ -64,7 +66,7 @@ const Test = () => {
             loadImage()
         }
     }, [isEcoMode])
-    const effFactor = data?.websiteCarbonEcoImprovementFactor && Number(data?.websiteCarbonEcoImprovementFactor).toFixed(1);
+
     const steps = [
         {
             id: '1',
@@ -79,7 +81,7 @@ const Test = () => {
                     console.log(isEcoMode)
                     setIsEcoMode(!isEcoMode);
                     localStorage.setItem('ecoMode', (!isEcoMode).toString())
-                }}>{`Darf ich Ihnen die energieeffiziente Webseite zeigen? (${effFactor} mal effizienter)`}</button>
+                }}>Darf ich Ihnen die energieeffiziente Webseite zeigen?</button>
             ),
             end: true,
         },
@@ -91,6 +93,8 @@ const Test = () => {
         <>
 
             {!isEcoMode && img && <Hero imageSrc={img}/>}
+            {isEcoMode && <Hero imageSrc={ecoImage}/>}
+
 
             <div className='fab-container'>
 
