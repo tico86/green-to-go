@@ -35,7 +35,7 @@ function App() {
             <div className="App">
                 <Header/>
                 <Test/>
-                <Content />
+                <Content/>
                 <Footer/>
             </div>
         </QueryClientProvider>
@@ -76,9 +76,13 @@ const Test = () => {
             component: (
                 <button onClick={() => {
                     // @ts-ignore
-                    console.log(isEcoMode)
-                    setIsEcoMode(!isEcoMode);
-                    localStorage.setItem('ecoMode', (!isEcoMode).toString())
+
+                    setIsEcoMode(isEcoMode => {
+                        localStorage.setItem('ecoMode', (!isEcoMode).toString());
+                        return !isEcoMode
+                    });
+
+
                 }}>{`Darf ich Ihnen die energieeffiziente Webseite zeigen? (${effFactor} mal effizienter)`}</button>
             ),
             end: true,
