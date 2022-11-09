@@ -127,7 +127,7 @@ const Test = () => {
     if (isLoading) return <div>Loading...</div>
     if (isError) return <div>Error</div>
     return (
-        <div>
+        <div className="App">
 
             <Header isEcoMode={isEcoMode || isEcoInUrl}/>
             {img && <Hero imageSrc={img}/>}
